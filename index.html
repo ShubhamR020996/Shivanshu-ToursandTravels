@@ -179,4 +179,87 @@ footer img {
 
 <body>
 
-<!-- ================= HEADER ==============
+<!-- ================= HEADER ================= -->
+<header>
+    <img src="431e52d6-683d-4f20-ade7-677d0d0263c2.png" alt="Logo">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Packages</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- ================= HERO SLIDER ================= -->
+<div class="hero">
+    <div class="slide active" style="background-image:url('mountain.jpg')"></div>
+    <div class="slide" style="background-image:url('beach.jpg')"></div>
+    <div class="slide" style="background-image:url('city.jpg')"></div>
+
+    <div class="hero-content">
+        <h1>Explore India with Shivanshu Tours</h1>
+        <p>Mountains • Beaches • Cities</p>
+    </div>
+
+    <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+    <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+</div>
+
+<!-- ================= DESTINATIONS ================= -->
+<section>
+<h2>Popular Destinations</h2>
+
+<div class="destinations">
+    <div class="card">
+        <img src="mountain.jpg" alt="Mountain">
+        <div class="card-info">
+            <h3>Mountain Tours</h3>
+            <p>Adventure & scenic views</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="beach.jpg" alt="Beach">
+        <div class="card-info">
+            <h3>Beach Tours</h3>
+            <p>Relax & enjoy the sunshine</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="city.jpg" alt="City">
+        <div class="card-info">
+            <h3>City Tours</h3>
+            <p>Culture, food & nightlife</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div>
+        <img src="431e52d6-683d-4f20-ade7-677d0d0263c2.png">
+        <p>Trusted Domestic Travel Experts</p>
+    </div>
+    <div>
+        <p>Pune, Maharashtra</p>
+        <p>+91 91306689900</p>
+        <p>abc@gmail.com</p>
+    </div>
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+let slides = document.querySelectorAll(".slide");
+let current = 0;
+
+function changeSlide(step) {
+    slides[current].classList.remove("active");
+    current = (current + step + slides.length) % slides.length;
+    slides[current].classList.add("active");
+}
+</script>
+
+</body>
+</html>
