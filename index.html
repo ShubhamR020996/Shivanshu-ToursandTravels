@@ -3,255 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shivanshu Tours and Travels</title>
+<title>Dream Tours & Travels</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Roboto',sans-serif}
+body{font-family:'Poppins',sans-serif;color:#333;scroll-behavior:smooth}
 
 /* HEADER */
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 50px;
-    background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    position:sticky;
-    top:0;
-    z-index:1000
+    display:flex;justify-content:space-between;align-items:center;
+    padding:15px 50px;background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    position:sticky;top:0;z-index:1000
 }
-header img{
-    height:60px;
-    width:auto;
-    display:block;
-}
+header img{height:55px}
 nav a{
-    margin:0 15px;
-    text-decoration:none;
-    color:#333;
-    font-weight:500
+    margin:0 15px;text-decoration:none;
+    color:#333;font-weight:500;position:relative
 }
-nav a:hover{color:orange}
+nav a::after{
+    content:"";position:absolute;left:0;bottom:-5px;
+    width:0;height:2px;background:#ff7a00;transition:.3s
+}
+nav a:hover::after{width:100%}
 
 /* HERO SLIDER */
-.hero{
-    height:600px;
-    position:relative;
-    overflow:hidden
-}
+.hero{height:95vh;position:relative;overflow:hidden}
 .slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    transition:opacity .8s ease
+    position:absolute;width:100%;height:100%;
+    background-size:cover;background-position:center;
+    opacity:0;transition:1s
 }
 .slide.active{opacity:1}
 .hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.45);
-    z-index:1
+    content:"";position:absolute;inset:0;
+    background:rgba(0,0,0,.45)
 }
 .hero-content{
-    position:absolute;
-    top:50%;
-    left:50%;
+    position:absolute;top:50%;left:50%;
     transform:translate(-50%,-50%);
-    color:#fff;
-    text-align:center;
-    z-index:2
+    text-align:center;color:#fff;z-index:2
 }
-.hero-content h1{font-size:46px;margin-bottom:10px}
-.hero-content p{font-size:20px}
-
-/* Slider buttons */
-.slider-btn{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:30px;
-    background:rgba(0,0,0,.6);
-    color:#fff;
-    border:none;
-    padding:10px 15px;
-    cursor:pointer;
-    z-index:3
+.hero-content h1{font-size:50px}
+.hero-content p{font-size:22px;margin:15px 0}
+.hero-content button{
+    background:#ff7a00;color:white;
+    border:none;padding:14px 30px;
+    font-size:18px;border-radius:30px;
+    cursor:pointer;animation:pulse 1.5s infinite
 }
-.prev{left:20px}
-.next{right:20px}
+@keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.1)}
+    100%{transform:scale(1)}
+}
 
-/* SECTIONS */
-section{padding:60px 50px}
+/* SECTION */
+section{padding:80px 50px}
 section h2{
-    text-align:center;
-    font-size:32px;
-    margin-bottom:40px;
-    color:#0b3d91
+    text-align:center;font-size:36px;
+    margin-bottom:50px;color:#0b3d91
 }
 
-/* DESTINATIONS */
-.destinations{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    flex-wrap:wrap
+/* DESTINATIONS & PACKAGES */
+.grid{
+    display:flex;gap:30px;
+    justify-content:center;flex-wrap:wrap
 }
 .card{
-    width:300px;
-    border-radius:12px;
-    overflow:hidden;
-    position:relative;
-    box-shadow:0 5px 20px rgba(0,0,0,.15)
+    width:300px;border-radius:15px;
+    overflow:hidden;position:relative;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    transition:.4s
 }
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover
-}
+.card:hover{transform:translateY(-10px)}
+.card img{width:100%;height:220px;object-fit:cover}
 .card-info{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    padding:15px;
-    background:rgba(0,0,0,.75);
-    color:#fff;
-    transform:translateY(100%);
+    position:absolute;bottom:0;width:100%;
+    padding:20px;background:rgba(0,0,0,.75);
+    color:#fff;transform:translateY(100%);
     transition:.4s
 }
 .card:hover .card-info{transform:translateY(0)}
+.price{
+    background:#ff7a00;color:white;
+    padding:5px 12px;border-radius:20px;
+    display:inline-block;margin-top:10px
+}
 
-/* BOOK NOW FORM */
+/* BOOKING FORM */
 .form-box{
-    max-width:500px;
-    margin:0 auto;
-    background:#f9f9f9;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1)
+    max-width:550px;margin:auto;
+    background:#f9f9f9;padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15)
 }
-.form-box input,
-.form-box select,
-.form-box button{
-    width:100%;
-    padding:12px;
+.form-box input,.form-box select,.form-box button{
+    width:100%;padding:14px;
     margin-bottom:15px;
-    border-radius:5px;
-    border:1px solid #ccc;
-    font-size:16px
+    border-radius:8px;border:1px solid #ccc
 }
 .form-box button{
-    background:orange;
-    color:#fff;
-    border:none;
-    font-weight:bold;
-    cursor:pointer
+    background:#ff7a00;color:white;
+    border:none;font-weight:bold;
+    font-size:18px;cursor:pointer
 }
 
 /* FOOTER */
 footer{
-    background:#0b3d91;
-    color:#fff;
-    padding:40px;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap
-}
-footer img{
-    height:50px;
-    width:auto
+    background:#0b3d91;color:white;
+    padding:40px;display:flex;
+    justify-content:space-between;flex-wrap:wrap
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    font-size:28px;
-    text-decoration:none;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-    z-index:999
+/* FLOATING BUTTONS */
+.whatsapp,.book-float{
+    position:fixed;right:20px;
+    padding:15px;border-radius:50%;
+    font-size:26px;color:white;
+    text-decoration:none;z-index:999
+}
+.whatsapp{bottom:20px;background:#25D366}
+.book-float{
+    bottom:90px;background:#ff7a00;
+    animation:bounce 2s infinite
+}
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+/* POPUP */
+.popup{
+    position:fixed;inset:0;
+    background:rgba(0,0,0,.6);
+    display:none;align-items:center;
+    justify-content:center;z-index:10000
+}
+.popup-content{
+    background:white;padding:30px;
+    border-radius:15px;text-align:center
+}
+.popup-content button{
+    margin-top:15px;padding:10px 20px;
+    background:#ff7a00;color:white;
+    border:none;border-radius:20px
 }
 
 @media(max-width:768px){
     header{flex-direction:column}
-    .hero-content h1{font-size:32px}
+    .hero-content h1{font-size:34px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-    <img src="logo.jpg" alt="Shivanshu Tours Logo">
+    <img src="https://dummyimage.com/160x60/000/fff&text=LOGO">
     <nav>
         <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Packages</a>
-        <a href="#book">Book Now</a>
+        <a href="#dest">Destinations</a>
+        <a href="#pack">Packages</a>
+        <a href="#book">Book</a>
     </nav>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-    <div class="slide active" style="background-image:url('mountain.jpg')"></div>
-    <div class="slide" style="background-image:url('beach.jpg')"></div>
-    <div class="slide" style="background-image:url('city.jpg')"></div>
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1500&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1500&q=80')"></div>
 
     <div class="hero-content">
-        <h1>Explore India with Shivanshu Tours</h1>
+        <h1>Your Dream Journey Starts Here</h1>
         <p>Mountains • Beaches • Cities</p>
+        <button onclick="openPopup()">Special Offer</button>
     </div>
-
-    <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
-    <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
 </div>
 
 <!-- DESTINATIONS -->
-<section>
+<section id="dest">
 <h2>Popular Destinations</h2>
-<div class="destinations">
+<div class="grid">
     <div class="card">
-        <img src="mountain.jpg">
-        <div class="card-info">
-            <h3>Mountain Tours</h3>
-            <p>Adventure & views</p>
-        </div>
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800">
+        <div class="card-info"><h3>Mountain Trips</h3></div>
     </div>
     <div class="card">
-        <img src="beach.jpg">
-        <div class="card-info">
-            <h3>Beach Tours</h3>
-            <p>Relax & sunshine</p>
-        </div>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800">
+        <div class="card-info"><h3>Beach Holidays</h3></div>
     </div>
     <div class="card">
-        <img src="city.jpg">
-        <div class="card-info">
-            <h3>City Tours</h3>
-            <p>Culture & nightlife</p>
-        </div>
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=800">
+        <div class="card-info"><h3>City Tours</h3></div>
     </div>
 </div>
 </section>
 
-<!-- BOOK NOW -->
+<!-- PACKAGES -->
+<section id="pack">
+<h2>Tour Packages</h2>
+<div class="grid">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1511732351696-2d1d42d7f64c?w=800">
+        <div class="card-info"><h3>Goa Trip</h3><span class="price">₹12,999</span></div>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800">
+        <div class="card-info"><h3>Manali Trip</h3><span class="price">₹15,999</span></div>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=800">
+        <div class="card-info"><h3>Delhi Tour</h3><span class="price">₹9,999</span></div>
+    </div>
+</div>
+</section>
+
+<!-- BOOK -->
 <section id="book">
 <h2>Book Your Trip</h2>
 <div class="form-box">
-    <input type="text" placeholder="Your Name">
-    <input type="tel" placeholder="Mobile Number">
+    <input placeholder="Your Name">
+    <input placeholder="Mobile Number">
     <select>
         <option>Select Destination</option>
         <option>Mountain</option>
@@ -263,33 +239,43 @@ footer img{
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div>
-        <img src="logo.jpg" alt="Shivanshu Tours Logo">
-        <p>Trusted Domestic Travel Experts</p>
+        <p>Trusted Tours & Travel Experts</p>
     </div>
     <div>
-        <p>Pune, Maharashtra</p>
-        <p>+91 91306689900</p>
-        <p>abc@gmail.com</p>
+        <p>📞 +91 XXXXXXXXXX</p>
+        <p>📍 India</p>
     </div>
 </footer>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/919130668990" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
+<a class="book-float" href="#book">📖</a>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>🎉 Flat 20% OFF</h2>
+        <p>Limited Time Offer!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
 
 <script>
 let slides=document.querySelectorAll('.slide');
-let index=0;
+let i=0;
+setInterval(()=>{
+    slides[i].classList.remove('active');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('active');
+},4000);
 
-function changeSlide(n){
-    slides[index].classList.remove('active');
-    index=(index+n+slides.length)%slides.length;
-    slides[index].classList.add('active');
+function openPopup(){
+    document.getElementById('popup').style.display='flex';
 }
-
-setInterval(()=>changeSlide(1),4000);
+function closePopup(){
+    document.getElementById('popup').style.display='none';
+}
 </script>
 
 </body>
