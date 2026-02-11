@@ -70,10 +70,7 @@
 
         .slide {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background-size: cover;
             background-position: center;
             opacity: 0;
@@ -232,60 +229,4 @@
 </div>
 
 <section>
-    <h2>Popular Destinations</h2>
-    <div class="cards">
-
-        <div class="card">
-            <img src="beach.jpg" alt="Beach">
-            <h3>Beach Tours</h3>
-        </div>
-
-        <div class="card">
-            <img src="mountain.jpg" alt="Mountain">
-            <h3>Mountain Tours</h3>
-        </div>
-
-        <div class="card">
-            <img src="city.jpg" alt="City">
-            <h3>City Tours</h3>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" alt="City View">
-            <h3>City Special</h3>
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    <div>
-        <img src="logo.jpg" alt="Logo">
-        <p>Trusted domestic tour experts delivering unforgettable journeys.</p>
-    </div>
-    <div>
-        <h3>Contact</h3>
-        <p>Pune, Maharashtra</p>
-        <p>📞 +91 9130668900</p>
-        <p>✉ abc@gmail.com</p>
-    </div>
-</footer>
-
-<div class="floating-buttons">
-    <a href="tel:+919130668900" class="call-btn">📞 Call Now</a>
-    <a href="https://wa.me/919130668900" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
-</div>
-
-<script>
-    let slides = document.querySelectorAll(".slide");
-    let index = 0;
-
-    setInterval(() => {
-        slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
-    }, 4000);
-</script>
-
-</body>
-</html>
+    <h2>Popular Destinations
